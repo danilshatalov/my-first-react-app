@@ -1,8 +1,13 @@
 .nav {
     grid-area: n;
+    padding: 30px;
 
 }
 
+.item a.activeLink {
+    color: darkmagenta;
+}
+
 .item {
-    color: blueviolet;
+    color: black;
 }
