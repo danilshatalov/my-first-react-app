@@ -1,10 +1,11 @@
 import MyPosts from './MyPosts/MyPosts';
 import style from './Profile.module.css'
+import ProfileInfo from '../Profile/ProfileInfo/ProfileInfo';
 
 function Profile() {
     return (
         <div>
-            <div>ava + discription</div>
+            <ProfileInfo />
             <MyPosts />
         </div>
     );
