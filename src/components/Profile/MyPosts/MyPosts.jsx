@@ -3,11 +3,14 @@ import Post from './Post/Post';
 
 function MyPosts() {
 
-    let postData = [
+    let posts = [
         { id: 1, message: 'Hey, I am here', likesCount: '2 likes' },
         { id: 2, message: 'What is going on?', likesCount: '1 like' },
         { id: 3, message: 'What is your favorite color?', likesCount: '8 likes' },
+        { id: 4, message: 'Him?', likesCount: '10 likes' }
     ];
+
+    let postsElements = posts.map(p => <Post message={p.message} likesCounter={p.likesCount} />)
 
     return (
         <div className={style.postsBlock}>
@@ -18,9 +21,7 @@ function MyPosts() {
                 <button>Remove</button>
             </div>
             <div className={style.posts}>
-                <Post message={postData[0].message} likesCounter={postData[0].likesCount} />
-                <Post message={postData[1].message} likesCounter={postData[1].likesCount} />
-                <Post message={postData[2].message} likesCounter={postData[2].likesCount} />
+                {postsElements}
             </div>
         </div>
     );
