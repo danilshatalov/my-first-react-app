@@ -6,7 +6,8 @@ import Dialogs from './components/Dialogs/Dialogs';
 import News from './components/News/News.jsx'
 import { BrowserRouter, Routes, Route } from 'react-router-dom';
 
-function App() {
+function App(props) {
+
   return (
     <BrowserRouter>
       <div className='app-wrapper'>
@@ -14,8 +15,8 @@ function App() {
         <Navbar />
         <div className='app-wrapper-content'>
           <Routes>
-            <Route path='/dialogs*' element={<Dialogs />} />
-            <Route path='/profile' element={<Profile />} />
+            <Route path='/dialogs*' element={<Dialogs dialogs={props.state.dialogsPage.dialogs} messages={props.state.dialogsPage.messages} />} />
+            <Route path='/profile' element={<Profile posts={props.state.profilePage.posts} />} />
             <Route path='/news' element={<News />} />
           </Routes>
         </div>
